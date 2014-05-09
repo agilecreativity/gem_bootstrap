@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+require_relative './../lib/cli_bootstrap'
+puts "You are using cli_bootstrap version #{CliBootstrap::VERSION}"
+puts "You argument #{ARGV}"
+CliBootstrap::MainCLI.start(ARGV)

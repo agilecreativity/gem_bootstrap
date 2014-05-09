@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+require_relative '../lib/<%= name %>'
+include <%= MiscUtils.camel_case(name) %>
+<%= MiscUtils.camel_case(name) %>::CLI.start(ARGV)

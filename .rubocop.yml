@@ -1,0 +1,12 @@
+# This is the configuration used to check the rubocop source code.
+AllCops:
+  Include:
+    - '**/Rakefile'
+    - '**/Gemfile'
+    - lib/**/*
+    - templates/**/*.rb
+  Exclude:
+    - spikes/**/*
+    - rubocop-todo.yml
+    - .rubocop.yml
+inherit_from: rubocop-todo.yml
