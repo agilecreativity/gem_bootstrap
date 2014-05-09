@@ -8,12 +8,12 @@ Gem::Specification.new do |spec|
   spec.version       = GemBootstrap::VERSION
   spec.authors       = ['Burin Choomnuan']
   spec.email         = ['agilecreativity@gmail.com']
-  spec.summary       = %q{Bootstrap the creation of ruby gem so that you don't have to start from scratch}
-  spec.description   = %q{Bootstrap the creation of ruby gem so that you don't have to start from scratch.
-                          Build with simple, sensible default and very easy to extend}
-  spec.homepage      = 'https://github.com/agilecreativity/cli_bootstrap'
+  spec.summary       = %q(Bootstrap the creation of ruby gem so that you don't have to start from scratch)
+  spec.description   = %q(Bootstrap the creation of ruby gem so that you don't have to start from scratch.
+                          Build with simple, sensible default and very easy to extend)
+  spec.homepage      = 'https://github.com/agilecreativity/gem_bootstrap'
   spec.license       = 'MIT'
-  spec.files         = Dir.glob("{bin,lib,templates}/**/*") + %w(Gemfile
+  spec.files         = Dir.glob('{bin,lib,templates}/**/*') + %w(Gemfile
                                                                  Rakefile
                                                                  gem_bootstrap.gemspec
                                                                  README.md
@@ -27,7 +27,6 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.add_runtime_dependency 'thor', '~> 0.19'
   spec.add_runtime_dependency 'grit', '~> 2.5'
-  spec.add_runtime_dependency 'code_lister', '~> 0.0.8'
   spec.add_development_dependency 'awesome_print', '~> 1.2'
   spec.add_development_dependency 'bundler', '~> 1.6'
   spec.add_development_dependency 'gem-ctags', '~> 1.0'

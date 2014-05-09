@@ -46,13 +46,7 @@ module GemBootstrap
     # rubocop:enable all
 
     def copy_licence
-      # Always use MIT license for now
       copy_file '../../templates/MIT_LICENSE', "#{name}/LICENSE"
-      # if yes?('Use MIT license?')
-      #   copy_file '../../templates/MIT_LICENSE', "#{name}/LICENSE"
-      # else
-      #   copy_file '../../templates/GNU_LICENSE', "#{name}/LICENSE"
-      # end
     end
 
     # Create the git project to store our generated code

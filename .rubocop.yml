@@ -4,9 +4,6 @@ AllCops:
     - '**/Rakefile'
     - '**/Gemfile'
     - lib/**/*
-    - templates/**/*.rb
   Exclude:
-    - spikes/**/*
-    - rubocop-todo.yml
-    - .rubocop.yml
+    - templates/**/*
 inherit_from: rubocop-todo.yml

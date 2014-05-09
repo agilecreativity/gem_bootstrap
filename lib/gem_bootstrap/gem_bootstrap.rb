@@ -2,7 +2,6 @@ require 'thor'
 require_relative './cli'
 module GemBootstrap
   class MainCLI < Thor
-    # register(class_name, subcommand_alias, usage_list_string, description_string)
     register GemBootstrap::CLI,
              'generate',
              'generate',

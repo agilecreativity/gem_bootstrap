@@ -11,7 +11,6 @@ module <%= MiscUtils.camel_case(name) %>
         puts "You are using <%= MiscUtils.camel_case(name) %> version #{<%= MiscUtils.camel_case(name) %>::VERSION}"
         exit
       end
-      # TODO: use the opts in your
       puts "Your options #{opts}"
       process(opts)
     end
@@ -19,7 +18,7 @@ module <%= MiscUtils.camel_case(name) %>
     desc 'usage', 'Display help screen'
     def usage
       puts <<-EOS
-TODO: add you simple usage here!
+Add you simple usage here!
       EOS
     end
 
@@ -28,7 +27,7 @@ TODO: add you simple usage here!
     private
 
     def process(opts = {})
-      puts "FYI: your options #{opts}"
+      puts "Your options #{opts}"
     end
   end
 end
