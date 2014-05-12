@@ -1,8 +1,12 @@
 ## <%= MiscUtils.camel_case(name) %>
 
-[![Gem Version](https://badge.fury.io/rb/<%= name %>.svg)](http://badge.fury.io/rb/<%= name %>)
-[![Dependency Status](https://gemnasium.com/<%= options[:github_id] %>/<%= name %>.png)](https://gemnasium.com/<%= options[:github_id] %>/<%= name %>)
-[![Code Climate](https://codeclimate.com/github/<%= options[:github_id] %>/<%= name %>.png)](https://codeclimate.com/github/<%= options[:github_id] %>/<%= name %>)
+[![Gem Version](https://badge.fury.io/rb/<%= name %>.svg)][gem]
+[![Dependency Status](https://gemnasium.com/<%= options[:github_id] %>/<%= name %>.png)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/<%= options[:github_id] %>/<%= name %>.png)][codeclimate]
+
+[gem]: http://badge.fury.io/rb/<%= name %>
+[gemnasium]: https://gemnasium.com/<%= options[:github_id] %>/<%= name %>
+[codeclimate]: https://codeclimate.com/github/<%= options[:github_id] %>/<%= name %>
 
 Quickly generate the starting template for creating CLI ruby gem.
 Generated template contain the simplest possible structure so that we don't have
@@ -15,6 +19,7 @@ Features:
 - Debug with pry[pry][]
 - Documentation with [yard][]
 - Style check with [rubocop][]
+- BDD/TDD with guard [guard][]
 - Initial git manipulation using [grit][]
 
 ### Installation
@@ -51,6 +56,7 @@ include <%= MiscUtils.camel_case(name) %>
 
 [thor]: https://github.com/erikhuda/thor
 [minitest]: https://github.com/seattlerb/minitest
+[guard]: https://github.com/guard/guard
 [yard]: https://github.com/lsegal/yard
 [pry]: https://github.com/pry/pry
 [rubocop]: https://github.com/bbatsov/rubocop
