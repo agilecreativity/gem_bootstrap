@@ -1,10 +1,19 @@
 ## gem_bootstrap
 
-[![Gem Version](https://badge.fury.io/rb/gem_bootstrap.svg)](http://badge.fury.io/rb/gem_bootstrap)
-[![Dependency Status](https://gemnasium.com/agilecreativity/gem_bootstrap.png)](https://gemnasium.com/agilecreativity/gem_bootstrap)
-[![Code Climate](https://codeclimate.com/github/agilecreativity/gem_bootstrap.png)](https://codeclimate.com/github/agilecreativity/gem_bootstrap)
+[![Gem Version](https://badge.fury.io/rb/gem_bootstrap.svg)][gem]
+[![Dependency Status](https://gemnasium.com/agilecreativity/gem_bootstrap.png)][gemnasium]
+[![Code Climate](https://codeclimate.com/github/agilecreativity/gem_bootstrap.png)][codeclimate]
 
-Generate the starting template for creating the ruby gem in ruby in one command.
+[gem]: http://badge.fury.io/rb/gem_bootstrap)
+[gemnasium]: https://gemnasium.com/agilecreativity/gem_bootstrap
+[codeclimate]: https://codeclimate.com/github/agilecreativity/gem_bootstrap
+
+Generate the starting template for creating ruby gem in ruby in just one command.
+
+TL;DR
+```sh
+gem install gem_bootstrap --pre; gem_bootstrap generate awesome_gem --github-id awesome_developer -- email cool@awesomedev.com --author 'John Guru II'
+```
 
 ### Features:
 
@@ -12,6 +21,7 @@ Generate the starting template for creating the ruby gem in ruby in one command.
 - Document with [Yard][]
 - Style check with [Rubocop][]
 - Debug with [Pry][]
+- TDD/BDD with [Guard][]
 - Initial git commit with [Grit] gem
 - Build on top of the most popular [Thor][] framework
 - Give you simple working structure that you can build upon but not dictate on
@@ -114,3 +124,4 @@ awesome_gem
 [Yard]: https://github.com/lsegal/yard
 [Rubocop]: https://github.com/bbatsov/rubocop
 [Pry]: https://github.com/pry/pry
+[Guard]: https://github.com/guard/guard
