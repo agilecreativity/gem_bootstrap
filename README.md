@@ -12,8 +12,9 @@ Generate the starting template for creating ruby gem in ruby in just one command
 
 TL;DR
 ```sh
-gem install gem_bootstrap --pre; gem_bootstrap generate awesome_gem --github-id awesome_developer -- email cool@awesomedev.com --author 'John Guru II'
+gem install gem_bootstrap --pre; gem_bootstrap generate awesome_gem --github-id awesome_developer --email cool@awesomedev.com --author 'John Guru II'
 ```
+Note: this gem will be release following the [Semantic Versioning][] start from `0.1.0`
 
 ### Features:
 
@@ -125,3 +126,4 @@ awesome_gem
 [Rubocop]: https://github.com/bbatsov/rubocop
 [Pry]: https://github.com/pry/pry
 [Guard]: https://github.com/guard/guard
+[Semantic Versioning]: http://semver.org
