@@ -1,6 +1,6 @@
-require 'bundler/gem_tasks'
-require 'rake/testtask'
-project_name = 'gem_bootstrap'
+require "bundler/gem_tasks"
+require "rake/testtask"
+project_name = "gem_bootstrap"
 
 Rake::TestTask.new do |t|
   t.libs << "lib/#{project_name}"
@@ -11,20 +11,20 @@ end
 task default: [:test, :rubocop]
 
 task :pry do
-  require 'pry'
-  require 'awesome_print'
-  require_relative 'lib/gem_bootstrap'
+  require "pry"
+  require "awesome_print"
+  require_relative "lib/gem_bootstrap"
   include GemBootstrap
   ARGV.clear
   Pry.start
 end
 
-require 'rubocop/rake_task'
-desc 'Run RuboCop on the lib directory'
+require "rubocop/rake_task"
+desc "Run RuboCop on the lib directory"
 Rubocop::RakeTask.new(:rubocop) do |task|
-  task.patterns = ['lib/**/*.rb']
+  task.patterns = ["lib/**/*.rb"]
   # only show the files with failures
-  task.formatters = ['files']
+  task.formatters = ["files"]
   # don't abort rake on failure
   task.fail_on_error = false
 end

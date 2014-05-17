@@ -1,7 +1,7 @@
-require_relative './gem_bootstrap/version'
-require_relative './gem_bootstrap/cli'
-require_relative './gem_bootstrap/git_utils'
-require_relative './gem_bootstrap/misc_utils'
-require_relative './gem_bootstrap/gem_bootstrap'
-require_relative './gem_bootstrap/core_ext/object/blank'
+require_relative "./gem_bootstrap/version"
+require_relative "./gem_bootstrap/cli"
+require_relative "./gem_bootstrap/git_utils"
+require_relative "./gem_bootstrap/misc_utils"
+require_relative "./gem_bootstrap/gem_bootstrap"
+require_relative "./gem_bootstrap/core_ext/object/blank"
 include GemBootstrap

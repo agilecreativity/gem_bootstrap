@@ -11,9 +11,24 @@
 Generate the starting template for creating ruby gem in ruby in just one command.
 
 TL;DR
+First install the gem
+
 ```sh
-gem install gem_bootstrap --pre; gem_bootstrap generate awesome_gem --github-id awesome_developer --email cool@awesomedev.com --author 'John Guru II'
+gem install gem_bootstrap
 ```
+
+then generate the new gem
+
+```sh
+gem_bootstrap awesome_gem --github-id awesome_developer --email cool@awesomedev.com --author 'John Guru II'
+```
+
+or the shot version
+
+```sh
+gem_bootstrap awesome_gem -g awesome_developer -e cool@awesomedev.com -a 'John Guru II'
+```
+
 Note: this gem will be release following the [Semantic Versioning][] start from `0.1.0`
 
 ### Features:
@@ -50,22 +65,20 @@ gem install gem_bootstrap
 Then just run the `gem_bootstrap` without any argument for list of help
 
 ```
-gem_bootstrap generate [GEM_NAME]
-                       --github-id [GITHUB_ID]
-                       --email [EMAIL]
-                       --author [AUTHOR]
+gem_bootstrap [GEM_NAME]
+              -g, --github-id [GITHUB_ID]
+              -e, --email [EMAIL]
+              -a, --author [AUTHOR]
 e.g.
-gem_bootstrap generate awesome_gem
-                       --github-id awesome_developer
-                       --email cool@awesomedev.com
-                       --author 'John Guru II'
-gem_bootstrap help [COMMAND]  # Describe available commands or one specific command
-gem_bootstrap usage           # Display help screen
+gem_bootstrap awesome_gem
+              --github-id awesome_developer
+              --email cool@awesomedev.com
+              --author 'John Guru II'
 ```
 To generate the gem just type the command like
 
 ```
-gem_bootstrap generate awesome_gem --github-id awesome_developer -- email cool@awesomedev.com --author 'John Guru II'
+gem_bootstrap awesome_gem --github-id awesome_developer -- email cool@awesomedev.com --author 'John Guru II'
 ```
 Which should output something like
 

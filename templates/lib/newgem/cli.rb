@@ -18,7 +18,7 @@ module <%= MiscUtils.camel_case(name) %>
     desc 'usage', 'Display help screen'
     def usage
       puts <<-EOS
-Add you simple usage here!
+Add your sample usage here!
       EOS
     end
 

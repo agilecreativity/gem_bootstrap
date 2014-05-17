@@ -1,4 +1,4 @@
-require 'grit'
+require "grit"
 module GemBootstrap
   class GitUtils
     class << self
@@ -9,14 +9,14 @@ module GemBootstrap
       def create_git_project(base_dir, gem_name)
         base_dir = File.expand_path(base_dir) # so that it works with ~/codes/etc
         files = MiscUtils.files base_dir: base_dir,
-                                non_exts: %w(Gemfile
+                                non_exts: %w[Gemfile
                                              Rakefile
                                              Guardfile
                                              LICENSE
                                              .rubocop.yml
                                              .yardopts
-                                             .gitignore) << gem_name,
-                                exts: %w(md rb gemspec yml),
+                                             .gitignore] << gem_name,
+                                exts: %w[md rb gemspec yml],
                                 recursive: true
         git_init(base_dir: base_dir)
         git_add(files, base_dir: base_dir, gem_name: gem_name)
@@ -29,19 +29,19 @@ module GemBootstrap
         current_dir = File.expand_path(options[:base_dir])
         base_dir = options[:base_dir] || Dir.pwd
         Dir.chdir(base_dir)
-        MiscUtils.shell(%w(git init) << base_dir)
+        MiscUtils.shell(%w[git init] << base_dir)
         Dir.chdir(current_dir)
       end
 
       def git_add(files, options = {})
         base_dir = File.expand_path(options[:base_dir])
         Dir.chdir(base_dir) do
-          git = Grit::Repo.new(File.expand_path('.'))
+          git = Grit::Repo.new(File.expand_path("."))
           files.each do |file|
             # puts "Add '#{file}' to repository"
             git.add(file)
           end
-          git.commit_index('Initial commit')
+          git.commit_index("Initial commit")
         end
       end
     end
