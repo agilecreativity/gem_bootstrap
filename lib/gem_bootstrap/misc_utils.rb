@@ -1,7 +1,6 @@
-require 'open3'
+require "open3"
 module GemBootstrap
   class MiscUtils
-
     CustomError = Class.new(StandardError)
 
     class << self
@@ -11,7 +10,7 @@ module GemBootstrap
       # @param [String] str the input string
       def snake_case(str)
         return str.downcase if str =~ /^[A-Z_]+$/
-        str.gsub(/\B[A-Z]/, '_\&').squeeze('_') =~ /_*(.*)/
+        str.gsub(/\B[A-Z]/, '_\&').squeeze("_") =~ /_*(.*)/
         $+.downcase
       end
 
@@ -21,7 +20,7 @@ module GemBootstrap
       # @param [String] str the input string
       def camel_case(str)
         return str if str !~ /_/ && str =~ /[A-Z]+.*/
-        str.split('_').map { |i| i.capitalize }.join
+        str.split("_").map { |i| i.capitalize }.join
       end
 
       # List files base on some extension
@@ -36,11 +35,11 @@ module GemBootstrap
         base_dir = opts[:base_dir]
         fail CustomError, "The directory #{base_dir} is not valid or or not readable!" unless File.exist?(base_dir)
 
-        wildcard = opts[:recursive] ? '**' : ''
+        wildcard = opts[:recursive] ? "**" : ""
         exts     = opts[:exts]
         non_exts = opts[:non_exts]
 
-        file_with_extension    = Dir.glob(File.join(base_dir, wildcard, "*.{#{exts.join(',')}}"))
+        file_with_extension    = Dir.glob(File.join(base_dir, wildcard, "*.{#{exts.join(",")}}"))
         file_with_no_extension = no_extension_files(base_dir, wildcard, non_exts)
 
         (file_with_extension + file_with_no_extension).sort
@@ -52,7 +51,7 @@ module GemBootstrap
       def no_extension_files(base_dir, wildcard, non_exts = [])
         list = []
         unless non_exts.empty?
-          list = Dir.glob(File.join(base_dir, wildcard, "{#{non_exts.join(',')}}"))
+          list = Dir.glob(File.join(base_dir, wildcard, "{#{non_exts.join(",")}}"))
         end
         list
       end
@@ -63,9 +62,9 @@ module GemBootstrap
       # @return [String] result of the command as the string
       def shell(commands = [])
         begin
-          command = commands.join(' ')
+          command = commands.join(" ")
           stdin, _stderr, _status = Open3.capture3(command)
-        rescue Exception => e
+        rescue => e
           raise "Problem processing #{command}, #{e.message}"
         end
         stdin

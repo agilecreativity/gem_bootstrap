@@ -1,3 +1,7 @@
 #!/usr/bin/env ruby
-require_relative './../lib/gem_bootstrap'
-GemBootstrap::MainCLI.start(ARGV)
+require_relative "./../lib/gem_bootstrap"
+if ARGV.empty?
+  GemBootstrap::MainCLI.start(%w[usage])
+else
+  GemBootstrap::CLI.start(ARGV)
+end
