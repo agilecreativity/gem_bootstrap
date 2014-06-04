@@ -1,3 +1,8 @@
+#### 0.1.3
+
+- Update rubocop to 0.23.x
+- Minor code cleanup
+
 #### 0.1.2
 
 - Fix the gemspec

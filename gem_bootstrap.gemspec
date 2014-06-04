@@ -36,6 +36,6 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "guard-minitest", "~> 2.2"
   spec.add_development_dependency "pry", "~> 0.9"
   spec.add_development_dependency "rake", "~> 10.3"
-  spec.add_development_dependency "rubocop", "~> 0.21"
+  spec.add_development_dependency "rubocop", "~> 0.23"
   spec.add_development_dependency "yard", "~> 0.8.7"
 end
