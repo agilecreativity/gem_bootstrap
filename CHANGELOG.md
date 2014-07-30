@@ -1,3 +1,8 @@
+#### 0.2.0
+
+- Use refinement instead of monkeypatching core classes
+- Minor code cleanup
+
 #### 0.1.3
 
 - Update rubocop to 0.23.x

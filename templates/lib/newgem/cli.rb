@@ -1,6 +1,9 @@
+require 'agile_utils'
 require 'thor'
 module <%= MiscUtils.camel_case(name) %>
   class CLI < Thor
+    using AgileUtils::HashExt
+
     desc 'execute', 'Execute the main program'
     method_option 'version',
                   aliases: '-v',
@@ -18,7 +21,7 @@ module <%= MiscUtils.camel_case(name) %>
     desc 'usage', 'Display help screen'
     def usage
       puts <<-EOS
-Add your sample usage here!
+TODO: Add your sample usage here
       EOS
     end
 
