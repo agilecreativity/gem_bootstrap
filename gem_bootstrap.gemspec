@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
                           Build with simple, sensible default and very easy to extend.
                           TL;DR create new gem with `gem_bootstrap awesome_gem -g github_id -e your@email.com -a 'John Guru'`)
   spec.homepage      = "https://github.com/agilecreativity/gem_bootstrap"
+  spec.required_ruby_version = ">= 2.1.0"
   spec.license       = "MIT"
   spec.files         = Dir.glob("{bin,lib,templates}/**/*") + %w[Gemfile
                                                                  Rakefile
@@ -28,7 +29,7 @@ Gem::Specification.new do |spec|
 
   spec.add_runtime_dependency "thor", "~> 0.19.1"
   spec.add_runtime_dependency "grit", "~> 2.5.0"
-  spec.add_runtime_dependency "agile_utils", "~> 0.2.0"
+  spec.add_runtime_dependency "agile_utils", "~> 0.2.1"
 
   spec.add_development_dependency "awesome_print", "~> 1.2.0"
   spec.add_development_dependency "bundler", "~> 1.6.2"
