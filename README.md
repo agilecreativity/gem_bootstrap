@@ -29,11 +29,17 @@ or the shot version
 gem_bootstrap awesome_gem -g awesome_developer -e cool@awesomedev.com -a 'John Guru II'
 ```
 
+rather use rspec instead of the default minitest
+
+```sh
+gem_bootstrap awesome_gem -g awesome_developer -e cool@awesomedev.com -a 'John Guru II' -t rspec
+```
+
 Note: this gem will be release following the [Semantic Versioning][] start from `0.1.0`
 
 ### Features:
 
-- Test framework using [Minitest][]
+- Test framework using [Minitest][] or [Rspec][]
 - Document with [Yard][]
 - Style check with [Rubocop][]
 - Debug with [Pry][]
@@ -78,7 +84,7 @@ gem_bootstrap awesome_gem
 To generate the gem just type the command like
 
 ```
-gem_bootstrap awesome_gem --github-id awesome_developer -- email cool@awesomedev.com --author 'John Guru II'
+gem_bootstrap awesome_gem --github-id awesome_developer --email cool@awesomedev.com --author 'John Guru II'
 ```
 Which should output something like
 
@@ -134,6 +140,7 @@ awesome_gem
 [github]: https://github.com/
 [Grit]: https://github.com/mojombo/grit
 [Minitest]: https://github.com/seattlerb/minitest
+[Rspec]: https://github.com/rspec/rspec
 [Thor]: https://github.com/erikhuda/thor
 [Yard]: https://github.com/lsegal/yard
 [Rubocop]: https://github.com/bbatsov/rubocop
