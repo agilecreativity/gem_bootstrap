@@ -1,11 +1,8 @@
 require "thor"
-require "agile_utils"
 require_relative "./misc_utils"
 require_relative "./git_utils"
 module GemBootstrap
   class CLI < Thor::Group
-    using AgileUtils::HashExt
-    using AgileUtils::BlankExt
     include Thor::Actions
 
     argument :name
@@ -39,7 +36,6 @@ module GemBootstrap
       template "../../templates/bin/newgem",                       "#{name}/bin/#{name}"
       template "../../templates/lib/newgem.rb",                    "#{name}/lib/#{name}.rb"
       template "../../templates/lib/newgem/version.rb",            "#{name}/lib/#{name}/version.rb"
-      template "../../templates/lib/newgem/logger.rb",             "#{name}/lib/#{name}/logger.rb"
       template "../../templates/lib/newgem/cli.rb",                "#{name}/lib/#{name}/cli.rb"
       template "../../templates/lib/newgem/newgem.rb",             "#{name}/lib/#{name}/#{name}.rb"
       template "../../templates/test/test_helper.rb",              "#{name}/test/test_helper.rb"

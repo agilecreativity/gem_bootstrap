@@ -1,3 +1,8 @@
+#### 0.2.2
+
+- Support ruby version 1.9.3+ onward
+- Use 'activesupport-core-ext' instead of 'agile_utils'
+
 #### 0.2.1
 
 - Make ruby 2.1.0+ mandatory for refinement support

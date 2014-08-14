@@ -11,9 +11,9 @@ Gem::Specification.new do |spec|
   spec.summary       = %q(Bootstrap the creation of ruby gem so that you don't have to start from scratch)
   spec.description   = %q(Bootstrap the creation of ruby gem so that you don't have to start from scratch.
                           Build with simple, sensible default and very easy to extend.
-                          TL;DR create new gem with `gem_bootstrap awesome_gem -g github_id -e your@email.com -a 'John Guru'`)
+                          TL;DR; create new gem with `gem_bootstrap awesome_gem -g github_id -e your@email.com -a 'John Guru'`)
   spec.homepage      = "https://github.com/agilecreativity/gem_bootstrap"
-  spec.required_ruby_version = ">= 2.1.0"
+  spec.required_ruby_version = ">= 1.9.3"
   spec.license       = "MIT"
   spec.files         = Dir.glob("{bin,lib,templates}/**/*") + %w[Gemfile
                                                                  Rakefile
@@ -26,18 +26,15 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = Dir.glob("test/**/*")
   spec.require_paths = ["lib"]
-
-  spec.add_runtime_dependency "thor", "~> 0.19.1"
   spec.add_runtime_dependency "grit", "~> 2.5.0"
-  spec.add_runtime_dependency "agile_utils", "~> 0.2.1"
-
+  spec.add_runtime_dependency "thor", "~> 0.19.1"
   spec.add_development_dependency "awesome_print", "~> 1.2.0"
-  spec.add_development_dependency "bundler", "~> 1.6.2"
+  spec.add_development_dependency "bundler", "~> 1.7.0"
   spec.add_development_dependency "gem-ctags", "~> 1.0.6"
-  spec.add_development_dependency "minitest", "~> 5.4.0"
-  spec.add_development_dependency "minitest-spec-context", "~> 0.0.3"
   spec.add_development_dependency "guard", "~> 2.6.1"
   spec.add_development_dependency "guard-minitest", "~> 2.3.1"
+  spec.add_development_dependency "minitest", "~> 5.4.0"
+  spec.add_development_dependency "minitest-spec-context", "~> 0.0.3"
   spec.add_development_dependency "pry", "~> 0.10.0"
   spec.add_development_dependency "rake", "~> 10.3.2"
   spec.add_development_dependency "rubocop", "~> 0.24.1"
