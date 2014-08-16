@@ -1,11 +1,17 @@
 require "thor"
+require 'active_support'
+require 'active_support/core_ext/object/blank'
+require 'active_support/core_ext/hash/keys'
+require 'active_support/core_ext/hash/indifferent_access'
 require_relative "./misc_utils"
 require_relative "./git_utils"
 module GemBootstrap
+  # The common template directory
+  TEMPLATES_DIR = "../../templates"
   class CLI < Thor::Group
     include Thor::Actions
-
     argument :name
+
     class_option :github_id,
                  aliases: "-g",
                  desc: "github profile id",
@@ -18,28 +24,48 @@ module GemBootstrap
                  aliases: "-e",
                  desc: "Email for github",
                  required: true
+    class_option :test_framework,
+                 default: "minitest",
+                 aliases: "-t",
+                 desc: "minitest or rspec",
+                 required: false
+
     def self.source_root
       File.dirname(__FILE__)
     end
 
     # rubocop:disable MethodLength, LineLength
     def create_lib_file
-      template "../../templates/README.md",                        "#{name}/README.md"
-      template "../../templates/CHANGELOGS.md",                    "#{name}/CHANGELOGS.md"
-      template "../../templates/dot_yardopts",                     "#{name}/.yardopts"
-      template "../../templates/dot_gitignore",                    "#{name}/.gitignore"
-      template "../../templates/Gemfile",                          "#{name}/Gemfile"
-      template "../../templates/Rakefile",                         "#{name}/Rakefile"
-      template "../../templates/Guardfile",                        "#{name}/Guardfile"
-      template "../../templates/dot_rubocop.yml",                  "#{name}/.rubocop.yml"
-      template "../../templates/newgem.gemspec.tt",                "#{name}/#{name}.gemspec"
-      template "../../templates/bin/newgem",                       "#{name}/bin/#{name}"
-      template "../../templates/lib/newgem.rb",                    "#{name}/lib/#{name}.rb"
-      template "../../templates/lib/newgem/version.rb",            "#{name}/lib/#{name}/version.rb"
-      template "../../templates/lib/newgem/cli.rb",                "#{name}/lib/#{name}/cli.rb"
-      template "../../templates/lib/newgem/newgem.rb",             "#{name}/lib/#{name}/#{name}.rb"
-      template "../../templates/test/test_helper.rb",              "#{name}/test/test_helper.rb"
-      template "../../templates/test/lib/newgem/test_newgem.rb",   "#{name}/test/lib/#{name}/test_#{name}.rb"
+      template "#{TEMPLATES_DIR}/README.md",             "#{name}/README.md"
+      template "#{TEMPLATES_DIR}/CHANGELOGS.md",         "#{name}/CHANGELOGS.md"
+      template "#{TEMPLATES_DIR}/dot_yardopts",          "#{name}/.yardopts"
+      template "#{TEMPLATES_DIR}/dot_gitignore",         "#{name}/.gitignore"
+      template "#{TEMPLATES_DIR}/Gemfile",               "#{name}/Gemfile"
+      template "#{TEMPLATES_DIR}/dot_rubocop.yml",       "#{name}/.rubocop.yml"
+      template "#{TEMPLATES_DIR}/bin/newgem",            "#{name}/bin/#{name}"
+      template "#{TEMPLATES_DIR}/lib/newgem.rb",         "#{name}/lib/#{name}.rb"
+      template "#{TEMPLATES_DIR}/lib/newgem/version.rb", "#{name}/lib/#{name}/version.rb"
+      template "#{TEMPLATES_DIR}/lib/newgem/cli.rb",     "#{name}/lib/#{name}/cli.rb"
+      template "#{TEMPLATES_DIR}/lib/newgem/newgem.rb",  "#{name}/lib/#{name}/#{name}.rb"
+
+      # TODO: store this for code reuse
+      test_framework = options.symbolize_keys[:test_framework]
+
+      template "#{TEMPLATES_DIR}/Rakefile-#{test_framework}",  "#{name}/Rakefile"
+      template "#{TEMPLATES_DIR}/Guardfile-#{test_framework}", "#{name}/Guardfile"
+      template "#{TEMPLATES_DIR}/newgem-#{test_framework}.gemspec.tt", "#{name}/#{name}.gemspec"
+    end
+    # rubocop:enable all
+
+    # rubocop:disable MethodLength, LineLength
+    def copy_test_files
+      if options.symbolize_keys[:test_framework] == 'minitest'
+        template "#{TEMPLATES_DIR}/test/test_helper.rb",            "#{name}/test/test_helper.rb"
+        template "#{TEMPLATES_DIR}/test/lib/newgem/test_newgem.rb", "#{name}/test/lib/#{name}/test_#{name}.rb"
+      else
+        template "#{TEMPLATES_DIR}/spec/spec_helper.rb",            "#{name}/spec/spec_helper.rb"
+        template "#{TEMPLATES_DIR}/spec/lib/newgem/newgem_spec.rb", "#{name}/spec/lib/#{name}/#{name}_spec.rb"
+      end
     end
     # rubocop:enable all
 

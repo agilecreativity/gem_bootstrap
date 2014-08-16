@@ -8,19 +8,15 @@
 [gemnasium]: https://gemnasium.com/<%= options[:github_id] %>/<%= name %>
 [codeclimate]: https://codeclimate.com/github/<%= options[:github_id] %>/<%= name %>
 
-Quickly generate the starting template for creating CLI ruby gem.
-Generated template contain the simplest possible structure so that we don't have
-to start from scratch.
+Here are list of gems that you can use with your project
 
-Features:
-
-- Test with [minitest][]
+- Test with either [Minitest][] or [Rspec][]
 - Build with the power of [Thor][]
-- Debug with pry[pry][]
-- Documentation with [yard][]
-- Style check with [rubocop][]
-- BDD/TDD with guard [guard][]
-- Initial git manipulation using [grit][]
+- Debug with [Pry][]
+- Documentation with [Yard][]
+- Style check with [Rubocop][]
+- BDD/TDD with guard [Guard][]
+- Initial git manipulation using [Grit][]
 
 ### Installation
 
@@ -54,10 +50,11 @@ include <%= MiscUtils.camel_case(name) %>
 4. Push to the branch (`git push origin my-new-feature`)
 5. Create new Pull Request
 
-[thor]: https://github.com/erikhuda/thor
-[minitest]: https://github.com/seattlerb/minitest
-[guard]: https://github.com/guard/guard
-[yard]: https://github.com/lsegal/yard
-[pry]: https://github.com/pry/pry
-[rubocop]: https://github.com/bbatsov/rubocop
-[grit]: https://github.com/mojombo/grit
+[Thor]: https://github.com/erikhuda/thor
+[Minitest]: https://github.com/seattlerb/minitest
+[RSpec]: https://github.com/rspec
+[Guard]: https://github.com/guard/guard
+[Yard]: https://github.com/lsegal/yard
+[Pry]: https://github.com/pry/pry
+[Rubocop]: https://github.com/bbatsov/rubocop
+[Grit]: https://github.com/mojombo/grit

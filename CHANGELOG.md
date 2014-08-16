@@ -1,3 +1,9 @@
+#### 0.2.3
+
+- Add option for specifying RSpec or Minitest as testing framework.
+- Contributed by [Nick den Engelsman](https://github.com/nicka)
+- Add the missing activesupport-core-ext
+
 #### 0.2.2
 
 - Support ruby version 1.9.3+ onward

@@ -7,6 +7,7 @@ AllCops:
     - <%= name %>.gemspec
     - lib/**/*.rb
     - test/**/*.rb
+
 # Avoid long parameter lists
 ParameterLists:
   Max: 5
