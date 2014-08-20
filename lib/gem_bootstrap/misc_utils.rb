@@ -1,5 +1,4 @@
 require 'open3'
-
 module GemBootstrap
   class MiscUtils
     CustomError = Class.new(StandardError)

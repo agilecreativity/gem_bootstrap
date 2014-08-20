@@ -7,6 +7,7 @@ task :pry do
   require "pry"
   require "awesome_print"
   require_relative "lib/<%= name %>"
+  include <%= MiscUtils.camel_case(name) %>
   ARGV.clear
   Pry.start
 end
