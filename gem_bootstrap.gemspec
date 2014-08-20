@@ -10,8 +10,8 @@ Gem::Specification.new do |spec|
   spec.email         = ['agilecreativity@gmail.com']
   spec.summary       = "Bootstrap the creation of ruby gem so that you don't have to start from scratch"
   spec.description   = "Bootstrap the creation of ruby gem so that you don't have to start from scratch.
-                          Build with simple, sensible default and very easy to extend.
-                          TL;DR; create new gem with `gem_bootstrap awesome_gem -g github_id -e your@email.com -a 'John Guru'`"
+                        Build with simple, sensible default and very easy to extend.
+                        TL;DR; create new gem with `gem_bootstrap awesome_gem -g github_id -e your@email.com -a 'John Guru'`"
   spec.homepage      = 'https://github.com/agilecreativity/gem_bootstrap'
   spec.required_ruby_version = '>= 1.9.3'
   spec.license       = 'MIT'
@@ -27,10 +27,12 @@ Gem::Specification.new do |spec|
   spec.test_files    = Dir.glob('test/**/*')
   spec.require_paths = ['lib']
 
+  # runtime dependencies
   spec.add_runtime_dependency 'activesupport-core-ext', '~> 4.0.0.2'
   spec.add_runtime_dependency 'grit', '~> 2.5.0'
   spec.add_runtime_dependency 'thor', '~> 0.19.1'
 
+  # development dependencies
   spec.add_development_dependency 'awesome_print', '~> 1.2.0'
   spec.add_development_dependency 'bundler', '~> 1.7.0'
   spec.add_development_dependency 'gem-ctags', '~> 1.0.6'

@@ -1,7 +1,11 @@
+#### 0.2.4
+
+- Merge 2nd pull request by [Nick den Engelsman][] - Thanks!
+
 #### 0.2.3
 
 - Add option for specifying RSpec or Minitest as testing framework.
-- Contributed by [Nick den Engelsman](https://github.com/nicka)
+- First pull request by [Nick den Engelsman][]
 - Add the missing activesupport-core-ext
 
 #### 0.2.2
@@ -44,3 +48,4 @@
 - Initial release
 
 [Symantic Versioning]: http://semver.org
+[Nick den Engelsman]: https://github.com/nicka

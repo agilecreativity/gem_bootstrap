@@ -48,7 +48,6 @@ module GemBootstrap
       template "#{TEMPLATES_DIR}/lib/newgem/cli.rb",     "#{name}/lib/#{name}/cli.rb"
       template "#{TEMPLATES_DIR}/lib/newgem/newgem.rb",  "#{name}/lib/#{name}/#{name}.rb"
 
-      # TODO: store this for code reuse
       test_framework = options.symbolize_keys[:test_framework]
 
       template "#{TEMPLATES_DIR}/Rakefile-#{test_framework}",  "#{name}/Rakefile"
