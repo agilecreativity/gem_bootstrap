@@ -1,33 +1,33 @@
-require "thor"
+require 'thor'
 require 'active_support'
 require 'active_support/core_ext/object/blank'
 require 'active_support/core_ext/hash/keys'
 require 'active_support/core_ext/hash/indifferent_access'
-require_relative "./misc_utils"
-require_relative "./git_utils"
+require_relative './misc_utils'
+require_relative './git_utils'
 module GemBootstrap
   # The common template directory
-  TEMPLATES_DIR = "../../templates"
+  TEMPLATES_DIR = '../../templates'
   class CLI < Thor::Group
     include Thor::Actions
     argument :name
 
     class_option :github_id,
-                 aliases: "-g",
-                 desc: "github profile id",
+                 aliases: '-g',
+                 desc: 'github profile id',
                  required: true
     class_option :author,
-                 aliases: "-a",
-                 desc: "Full name of the author",
+                 aliases: '-a',
+                 desc: 'Full name of the author',
                  required: true
     class_option :email,
-                 aliases: "-e",
-                 desc: "Email for github",
+                 aliases: '-e',
+                 desc: 'Email for github',
                  required: true
     class_option :test_framework,
-                 default: "minitest",
-                 aliases: "-t",
-                 desc: "minitest or rspec",
+                 default: 'minitest',
+                 aliases: '-t',
+                 desc: 'minitest or rspec',
                  required: false
 
     def self.source_root
@@ -70,7 +70,7 @@ module GemBootstrap
     # rubocop:enable all
 
     def copy_licence
-      copy_file "../../templates/MIT_LICENSE", "#{name}/LICENSE"
+      copy_file '../../templates/MIT_LICENSE', "#{name}/LICENSE"
     end
 
     # Create the git project to store our generated code
