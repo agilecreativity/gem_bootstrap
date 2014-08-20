@@ -12,6 +12,7 @@ task :pry do
   require 'pry'
   require 'awesome_print'
   require_relative 'lib/gem_bootstrap'
+  include GemBootstrap
   ARGV.clear
   Pry.start
 end

@@ -1,6 +1,5 @@
 require 'thor'
 require_relative './cli'
-
 module GemBootstrap
   class MainCLI < Thor
     register GemBootstrap::CLI,

@@ -1,5 +1,4 @@
 require 'thor'
-
 module <%= MiscUtils.camel_case(name) %>
   class CLI < Thor
     desc 'execute', 'Execute the main program'
