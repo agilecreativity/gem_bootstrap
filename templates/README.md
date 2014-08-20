@@ -38,7 +38,6 @@ Use as library try
 
 ```ruby
 require '<%= name %>'
-include <%= MiscUtils.camel_case(name) %>
 # then call the appropriate functions
 ```
 
