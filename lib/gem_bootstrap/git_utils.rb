@@ -1,4 +1,5 @@
 require 'grit'
+
 module GemBootstrap
   class GitUtils
     class << self
