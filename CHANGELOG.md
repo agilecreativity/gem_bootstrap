@@ -1,3 +1,9 @@
+#### 0.2.5
+
+- Update the gem's dependencies
+- Improve the code structure
+- Misc code cleanup
+
 #### 0.2.4
 
 - Merge 2nd pull request by [Nick den Engelsman][] - Thanks!

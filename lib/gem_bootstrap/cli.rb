@@ -1,13 +1,6 @@
-require 'thor'
-require 'active_support'
-require 'active_support/core_ext/object/blank'
-require 'active_support/core_ext/hash/keys'
-require 'active_support/core_ext/hash/indifferent_access'
-require_relative './misc_utils'
-require_relative './git_utils'
 module GemBootstrap
-  # The common template directory
   TEMPLATES_DIR = '../../templates'
+
   class CLI < Thor::Group
     include Thor::Actions
     argument :name

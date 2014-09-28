@@ -10,7 +10,6 @@
 
 Generate the starting template for creating ruby gem in ruby in just one command.
 
-TL;DR;
 First install the gem
 
 ```sh

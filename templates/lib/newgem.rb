@@ -1,4 +1,3 @@
-# Make use of core_extension (don't invent the wheel)
 require 'active_support'
 require 'active_support/core_ext/object/blank'
 require 'active_support/core_ext/hash/keys'

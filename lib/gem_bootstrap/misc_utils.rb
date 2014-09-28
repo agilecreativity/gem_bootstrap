@@ -1,4 +1,3 @@
-require 'open3'
 module GemBootstrap
   class MiscUtils
     CustomError = Class.new(StandardError)
@@ -23,7 +22,9 @@ module GemBootstrap
         str.split('_').map { |i| i.capitalize }.join
       end
 
-      # List files base on some extension
+      # List files base on simple criteria
+      #
+      # @param [Hash<Symbol, Object>] args keys and values of argument
       def files(args = {})
         opts = {
           base_dir: Dir.pwd,
@@ -45,9 +46,12 @@ module GemBootstrap
         (file_with_extension + file_with_no_extension).sort
       end
 
-      # List files that do not have the extension
+      # List files that do not have any extension
       #
-      # @return list of files that does not have any extension
+      # @param [String] base_dir the starting directory
+      # @param [String] wildcard the wildcard string e.g. '**' or '' (empty string)
+      # @param [Array<String>] non_exts list of file without extension
+      # @return [Array<String> list of matching files that do not have any extension
       def no_extension_files(base_dir, wildcard, non_exts = [])
         list = []
         unless non_exts.empty?
@@ -61,13 +65,13 @@ module GemBootstrap
       # @param [Array<String>] commands list of command
       # @return [String] result of the command as the string
       def shell(commands = [])
-        begin
-          command = commands.join(' ')
-          stdin, _stderr, _status = Open3.capture3(command)
-        rescue => e
-          raise "Problem processing #{command}, #{e.message}"
-        end
+        raise "commands list must be valid and not empty" unless commands.present?
+        # Join the list of commands to a single string
+        command = commands.join(' ')
+        stdin, _stderr, _status = Open3.capture3(command)
         stdin
+      rescue => e
+        raise "Problem processing `#{command}`, #{e.message}"
       end
     end
   end
