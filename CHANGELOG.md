@@ -1,3 +1,9 @@
+#### 0.2.6
+
+ - Remove dependency on output from `git` in the `*.gemspec` file
+ - Use explicit settings for `spec.files` in `*.gemspec` file
+ - Rename `CHANGELOGS.md` to `CHANGELOG.md` for consistency
+
 #### 0.2.5
 
 - Update the gem's dependencies

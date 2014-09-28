@@ -1,4 +1,3 @@
-require 'thor'
 module <%= MiscUtils.camel_case(name) %>
   class CLI < Thor
     desc 'execute', 'Execute the main program'
@@ -11,7 +10,6 @@ module <%= MiscUtils.camel_case(name) %>
         puts "You are using <%= MiscUtils.camel_case(name) %> version #{<%= MiscUtils.camel_case(name) %>::VERSION}"
         exit
       end
-      puts "Your options #{opts}"
       process(opts)
     end
 
@@ -27,7 +25,7 @@ TODO: Add your sample usage here
     private
 
     def process(opts = {})
-      puts "Your options #{opts}"
+      puts "Your options: #{opts}"
     end
   end
 end

@@ -30,7 +30,7 @@ module GemBootstrap
     # rubocop:disable MethodLength, LineLength
     def create_lib_file
       template "#{TEMPLATES_DIR}/README.md",             "#{name}/README.md"
-      template "#{TEMPLATES_DIR}/CHANGELOGS.md",         "#{name}/CHANGELOGS.md"
+      template "#{TEMPLATES_DIR}/CHANGELOG.md",          "#{name}/CHANGELOG.md"
       template "#{TEMPLATES_DIR}/dot_yardopts",          "#{name}/.yardopts"
       template "#{TEMPLATES_DIR}/dot_gitignore",         "#{name}/.gitignore"
       template "#{TEMPLATES_DIR}/Gemfile",               "#{name}/Gemfile"

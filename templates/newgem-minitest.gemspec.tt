@@ -12,7 +12,14 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/<%= options[:github_id] %>/<%= name %>'
   spec.required_ruby_version = ">= 1.9.3"
   spec.license       = 'MIT'
-  spec.files         = `git ls-files -z`.split("\x0")
+  spec.files         = Dir.glob('{bin,lib,spec,test}/**/*') + %w(Gemfile
+                                                                 Rakefile
+                                                                 <%= name %>.gemspec
+                                                                 README.md
+                                                                 CHANGELOG.md
+                                                                 LICENSE
+                                                                 .rubocop.yml
+                                                                 .gitignore)
   spec.executables   = spec.files.grep(%r{^bin/}) { |f| File.basename(f) }
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
