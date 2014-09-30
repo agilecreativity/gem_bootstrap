@@ -1,3 +1,7 @@
+#### 0.2.7
+
+- Use require instead require_relative
+
 #### 0.2.6
 
  - Remove dependency on output from `git` in the `*.gemspec` file
