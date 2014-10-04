@@ -1,6 +1,5 @@
 #!/usr/bin/env ruby
 require_relative '../lib/<%= name %>'
-include <%= MiscUtils.camel_case(name) %>
 if ARGV.empty?
   <%= MiscUtils.camel_case(name) %>::CLI.start(%w[usage])
 else

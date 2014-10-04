@@ -1,13 +1,12 @@
 module GemBootstrap
   class MiscUtils
-    CustomError = Class.new(StandardError)
-
     class << self
       # Receives a string and convert it to snake case.
       # SnakeCase returns snake_case.
       #
       # @param [String] str the input string
       def snake_case(str)
+        # for testing only
         return str.downcase if str =~ /^[A-Z_]+$/
         str.gsub(/\B[A-Z]/, '_\&').squeeze('_') =~ /_*(.*)/
         $+.downcase
@@ -27,14 +26,14 @@ module GemBootstrap
       # @param [Hash<Symbol, Object>] args keys and values of argument
       def files(args = {})
         opts = {
-          base_dir: Dir.pwd,
+          base_dir:  Dir.pwd,
           recursive: false,
-          exts: [],
-          non_exts: []
+          exts:      [],
+          non_exts:  []
         }.merge(args)
 
         base_dir = opts[:base_dir]
-        fail CustomError, "The directory #{base_dir} is not valid or or not readable!" unless File.exist?(base_dir)
+        fail Errors::CustomError, "The directory #{base_dir} is not valid or or not readable!" unless File.exist?(base_dir)
 
         wildcard = opts[:recursive] ? '**' : ''
         exts     = opts[:exts]

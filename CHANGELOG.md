@@ -1,3 +1,8 @@
+#### 0.2.8
+
+- Add some tests (better late than never)
+- Add Guardfile for TDD/BDD
+
 #### 0.2.7
 
 - Use require instead require_relative

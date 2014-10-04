@@ -21,6 +21,8 @@ module GemBootstrap
         git_add(base_dir, files)
       end
 
+      private
+
       # Run the `git init` on a given directory
       #
       # @param [String] base_dir the starting directory
@@ -45,8 +47,6 @@ module GemBootstrap
           git.commit_index('Initial commit')
         end
       end
-
-      private
 
       def expand_path(base_dir)
         raise "Invalid directory name `{base_dir}`" if base_dir.nil? || !File.directory?(File.new(base_dir))
