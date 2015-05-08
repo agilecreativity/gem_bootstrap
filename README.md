@@ -70,43 +70,71 @@ gem install gem_bootstrap
 Then just run the `gem_bootstrap` without any argument for list of help
 
 ```
-gem_bootstrap [GEM_NAME]
-              -g, --github-id [GITHUB_ID]
-              -e, --email [EMAIL]
-              -a, --author [AUTHOR]
-e.g.
-gem_bootstrap awesome_gem
-              --github-id awesome_developer
-              --email cool@awesomedev.com
-              --author 'John Guru II'
+# Usage/Synopsis:
+gem_bootstrap [GEM_NAME] -g, --github-id [GITHUB_ID] -e, --email [EMAIL] -a, --author [AUTHOR] --test-framework [FRAMEWORK]
+
+# Create a gem name 'awesome_gem' with minitest as a testing framework (default)
+gem_bootstrap awesome_gem -g awesome_developer -e cool@awesomedev.com -a 'John Guru II'
+
+# Create a gem name 'awesome_gem' with rspec as a testing framework
+gem_bootstrap awesome_gem -g awesome_developer -e cool@awesomedev.com -a 'John Guru II' -t rspec
 ```
-To generate the gem just type the command like
+
+### Basic Usage
+
+- For testing with [Minitest][] (default test framework)
 
 ```
 gem_bootstrap awesome_gem --github-id awesome_developer --email cool@awesomedev.com --author 'John Guru II'
 ```
-Which should output something like
+
+Should see the output like:
 
 ```
 create  awesome_gem/README.md
-create  awesome_gem/CHANGELOGS.md
+create  awesome_gem/CHANGELOG.md
 create  awesome_gem/.yardopts
 create  awesome_gem/.gitignore
 create  awesome_gem/Gemfile
-create  awesome_gem/Rakefile
-create  awesome_gem/Guardfile
 create  awesome_gem/.rubocop.yml
-create  awesome_gem/rubocop-todo.yml
-create  awesome_gem/awesome_gem.gemspec
 create  awesome_gem/bin/awesome_gem
 create  awesome_gem/lib/awesome_gem.rb
 create  awesome_gem/lib/awesome_gem/version.rb
-create  awesome_gem/lib/awesome_gem/logger.rb
 create  awesome_gem/lib/awesome_gem/cli.rb
 create  awesome_gem/lib/awesome_gem/awesome_gem.rb
-create  awesome_gem/lib/awesome_gem/core_ext/hash/keys.rb
+create  awesome_gem/Rakefile
+create  awesome_gem/Guardfile
+create  awesome_gem/awesome_gem.gemspec
 create  awesome_gem/test/test_helper.rb
 create  awesome_gem/test/lib/awesome_gem/test_awesome_gem.rb
+create  awesome_gem/LICENSE
+```
+
+- For testing with [Rspec][]
+
+```
+gem_bootstrap awesome_gem --github-id awesome_developer --email cool@awesomedev.com --author 'John Guru II' --test-framework rspec
+```
+
+Should see the output like:
+
+```
+create  awesome_gem/README.md
+create  awesome_gem/CHANGELOG.md
+create  awesome_gem/.yardopts
+create  awesome_gem/.gitignore
+create  awesome_gem/Gemfile
+create  awesome_gem/.rubocop.yml
+create  awesome_gem/bin/awesome_gem
+create  awesome_gem/lib/awesome_gem.rb
+create  awesome_gem/lib/awesome_gem/version.rb
+create  awesome_gem/lib/awesome_gem/cli.rb
+create  awesome_gem/lib/awesome_gem/awesome_gem.rb
+create  awesome_gem/Rakefile
+create  awesome_gem/Guardfile
+create  awesome_gem/awesome_gem.gemspec
+create  awesome_gem/spec/spec_helper.rb
+create  awesome_gem/spec/lib/awesome_gem/awesome_gem_spec.rb
 create  awesome_gem/LICENSE
 ```
 
@@ -126,6 +154,8 @@ rake install
 # You should have the basic command line that you can run like
 awesome_gem
 ```
+
+- Now you are ready to add your own logic/implementation in `./awesome_gem/lib/awesome_gem.rb`
 
 ### Contributing
 
