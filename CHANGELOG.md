@@ -1,3 +1,7 @@
+#### 0.2.9
+
+- Update gems to to the most recent version
+
 #### 0.2.8
 
 - Add some tests (better late than never)
