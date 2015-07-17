@@ -41,7 +41,7 @@ module GemBootstrap
       template "#{TEMPLATES_DIR}/lib/newgem/cli.rb",     "#{name}/lib/#{name}/cli.rb"
       template "#{TEMPLATES_DIR}/lib/newgem/newgem.rb",  "#{name}/lib/#{name}/#{name}.rb"
 
-      test_framework = options.symbolize_keys[:test_framework]
+      test_framework = options.deep_symbolize_keys[:test_framework]
 
       template "#{TEMPLATES_DIR}/Rakefile-#{test_framework}",  "#{name}/Rakefile"
       template "#{TEMPLATES_DIR}/Guardfile-#{test_framework}", "#{name}/Guardfile"
@@ -51,7 +51,7 @@ module GemBootstrap
 
     # rubocop:disable MethodLength, LineLength
     def copy_test_files
-      if options.symbolize_keys[:test_framework] == 'minitest'
+      if options.deep_symbolize_keys[:test_framework] == 'minitest'
         template "#{TEMPLATES_DIR}/test/test_helper.rb",            "#{name}/test/test_helper.rb"
         template "#{TEMPLATES_DIR}/test/lib/newgem/test_newgem.rb", "#{name}/test/lib/#{name}/test_#{name}.rb"
       else

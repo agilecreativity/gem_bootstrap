@@ -5,7 +5,7 @@ module <%= MiscUtils.camel_case(name) %>
                   aliases: '-v',
                   desc: 'Display version number'
     def execute
-      opts = options.symbolize_keys
+      opts = options.deep_symbolize_keys
       if opts[:version]
         puts "You are using <%= MiscUtils.camel_case(name) %> version #{<%= MiscUtils.camel_case(name) %>::VERSION}"
         exit

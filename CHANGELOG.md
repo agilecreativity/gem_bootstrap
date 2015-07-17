@@ -1,3 +1,9 @@
+#### 0.3.0
+
+- Replace activesuport-core-ext with activesupport gem
+- Use optimistic versioning in gemspec file
+- Minor cleanup
+
 #### 0.2.9
 
 - Update gems to to the most recent version
