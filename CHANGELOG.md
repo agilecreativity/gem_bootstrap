@@ -1,3 +1,7 @@
+#### 0.3.1
+
+- Update dependency gems to latest version
+
 #### 0.3.0
 
 - Replace activesuport-core-ext with activesupport gem
