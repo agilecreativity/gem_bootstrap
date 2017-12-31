@@ -1,3 +1,7 @@
+#### 0.3.2
+
+- Gem dependencies update and fix security warning
+
 #### 0.3.1
 
 - Update dependency gems to latest version
